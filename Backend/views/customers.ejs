@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Management</title>
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="/css/bootstrap.min.css">
+  <!-- Font Awesome CSS -->
+  <link rel="stylesheet" href="/css/all.min.css">
+  <style>
+    body {
+      padding: 20px;
+    }
+
+    .customer-list {
+      margin-top: 20px;
+    }
+
+    .btn-update {
+      background-color: #007bff;
+      color: white;
+    }
+
+    .form-container {
+      margin-bottom: 20px;
+    }
+  </style>
+  <script src="/js/jquery-3.5.1.slim.min.js"></script>
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Food Delivery</a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" href="/users">Users</a></li>
+        <li class="nav-item"><a class="nav-link" href="/restaurants">Restaurants</a></li>
+        <li class="nav-item"><a class="nav-link" href="/menus">Menus</a></li>
+        <li class="nav-item"><a class="nav-link" href="/orders">Orders</a></li>
+        <li class="nav-item"><a class="nav-link" href="/deliveries">Deliveries</a></li>
+        <li class="nav-item"><a class="nav-link" href="/customers">Customers</a></li>
+        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+        <li class="nav-item"><a class="nav-link" href="/register">Register</a></li>
+      </ul>
+    </div>
+  </nav>
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h2>Customers</h2>
+      </div>
+      <div class="col">
+        <button id="openFormBtn" class="btn btn-info" style="margin-bottom: 20px;"><i
+            class="fa-solid fa-plus"></i></button>
+      </div>
+    </div>
+    <div id="formContainer" class="form-container" style="display:none;">
+      <h2 id="formTitle">Add Customer</h2>
+      <form>
+        <div class="row">
+          <div class="col">
+            <input type="text" id="name" class="form-control" placeholder="Customer Name" required>
+          </div>
+          <div class="col">
+            <input type="email" id="email" class="form-control" placeholder="Customer Email" required>
+          </div>
+        </div>
+        <div class="row" style="margin-top: 10px;">
+          <div class="col">
+            <input type="text" id="address" class="form-control" placeholder="Customer Address" required>
+          </div>
+          <div class="col">
+            <input type="number" id="phone" class="form-control" placeholder="Customer Phone" required>
+          </div>
+        </div>
+      </form>
+      <button id="addBtn" class="btn btn-primary">Save</button>
+      <button id="updateBtn" class="btn btn-success" style="display:none;">Update</button>
+      <button class="btn btn-secondary" onclick="resetForm()">Cancel</button>
+    </div>
+
+    <table class="table table-striped customer-list">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Phone</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="customerList"></tbody>
+    </table>
+  </div>
+  <!-- Bootstrap JS and dependencies -->
+  <script src="/js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="/js/customers/customers.js"></script>
+</body>
+
+</html>
